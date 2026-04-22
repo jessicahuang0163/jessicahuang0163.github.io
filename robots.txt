@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jessicahuang0163.github.io/sitemap.xml
