@@ -93,17 +93,19 @@
 
         /* Main container */
         .container {
-            max-width: 900px;
+            max-width: 980px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
         /* About hero */
         .profile-header {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 245px;
-            gap: 46px;
             padding: 52px 0 40px;
+        }
+        .about-hero-main {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 285px;
+            gap: 48px;
             align-items: start;
         }
         .profile-info {
@@ -127,12 +129,12 @@
             margin-bottom: 20px;
         }
         .profile-photo {
-            width: 245px;
+            width: 285px;
         }
         .profile-photo img {
             display: block;
-            width: 245px;
-            height: 326px;
+            width: 285px;
+            height: 380px;
             border-radius: 12px;
             object-fit: cover;
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -177,6 +179,10 @@
             border-radius: 20px;
             font-size: 13px;
             font-weight: 500;
+        }
+        .about-hero-extra {
+            max-width: 820px;
+            margin-top: 22px;
         }
         .contact-invite {
             padding: 12px 16px;
@@ -500,11 +506,13 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-header {
+                padding-top: 34px;
+            }
+            .about-hero-main {
                 display: flex;
                 flex-direction: column-reverse;
                 align-items: center;
                 gap: 26px;
-                padding-top: 34px;
             }
             .profile-info h1,
             .profile-info .affiliation {
@@ -512,10 +520,13 @@
             }
             .profile-photo,
             .profile-photo img {
-                width: 230px;
+                width: 250px;
             }
             .profile-photo img {
-                height: 307px;
+                height: 333px;
+            }
+            .about-hero-extra {
+                margin-top: 16px;
             }
             .pub-item {
                 flex-direction: column;
@@ -579,35 +590,39 @@
 
     <!-- About Me -->
     <section class="profile-header" id="about">
-        <div class="profile-info">
-            <h1>Junjie Huang <span class="name-cn">(黄珺捷)</span></h1>
-            <p class="affiliation">Ph.D. Student in Computer Science · Shanghai Jiao Tong University</p>
-            <div class="about-text">
-                <p>
-                    I am a Ph.D. student in Computer Science at Shanghai Jiao Tong University (SJTU), working in the <a href="http://apex.sjtu.edu.cn/">APEX Data &amp; Knowledge Management Lab</a> under the supervision of <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>. I received my B.Eng. in Artificial Intelligence from the <strong>Elite Talent Program</strong> at SJTU in 2023.
-                </p>
-                <p>
-                    My research focuses on <strong>Large Language Models</strong>, <strong>AI Agents</strong>, <strong>Information Retrieval</strong>, and <strong>Recommender Systems</strong>. I have published 7 papers in top-tier conferences/journals (including WWW, AAAI, KDD, TOIS), with 4 first-author papers.
-                </p>
-                <p>
-                    I am currently a research intern at <a href="https://open.youtu.qq.com/">Tencent Youtu Lab</a> (2025&ndash;). Previously, I interned at <a href="https://www.noahlab.com.hk/">Huawei Noah's Ark Lab</a> (2022&ndash;2023) and <a href="https://cc.cmbchina.com/">China Merchants Bank Credit Card Center</a> (2021, 2024).
-                </p>
-                <p>
-                    I have been honored with the <strong>National Scholarship</strong> twice (Ph.D. 2025, Undergraduate 2020, ranked 1st/76), the <strong>China Optics Valley Scholarship</strong>, and was recognized as an <strong>SJTU Outstanding Graduate</strong>.
-                </p>
-                <p class="contact-invite">
-                    I'm always open to meeting people from diverse backgrounds. If you're interested in my research or just want to chat, feel free to reach out via <a href="mailto:huangjunjie2019@sjtu.edu.cn">Email</a> or <a href="images/wechat.jpg" target="_blank">WeChat</a>.
-                </p>
-                <div class="research-tags">
-                    <span>Large Language Models</span>
-                    <span>AI Agents</span>
-                    <span>Information Retrieval</span>
-                    <span>Recommender Systems</span>
+        <div class="about-hero-main">
+            <div class="profile-info">
+                <h1>Junjie Huang <span class="name-cn">(黄珺捷)</span></h1>
+                <p class="affiliation">Ph.D. Student in Computer Science · Shanghai Jiao Tong University</p>
+                <div class="about-text">
+                    <p>
+                        I am a Ph.D. student in Computer Science at Shanghai Jiao Tong University (SJTU), working in the <a href="http://apex.sjtu.edu.cn/">APEX Data &amp; Knowledge Management Lab</a> under the supervision of <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>. I received my B.Eng. in Artificial Intelligence from the <strong>Elite Talent Program</strong> at SJTU in 2023.
+                    </p>
+                    <p>
+                        My research focuses on <strong>Large Language Models</strong>, <strong>AI Agents</strong>, <strong>Information Retrieval</strong>, and <strong>Recommender Systems</strong>. I have published 7 papers in top-tier conferences/journals (including WWW, AAAI, KDD, TOIS), with 4 first-author papers.
+                    </p>
+                    <p>
+                        I am currently a research intern at <a href="https://open.youtu.qq.com/">Tencent Youtu Lab</a> (2025&ndash;). Previously, I interned at <a href="https://www.noahlab.com.hk/">Huawei Noah's Ark Lab</a> (2022&ndash;2023) and <a href="https://cc.cmbchina.com/">China Merchants Bank Credit Card Center</a> (2021, 2024).
+                    </p>
                 </div>
             </div>
+            <div class="profile-photo">
+                <img src="images/profile.jpg" alt="Junjie Huang">
+            </div>
         </div>
-        <div class="profile-photo">
-            <img src="images/profile.jpg" alt="Junjie Huang">
+        <div class="about-text about-hero-extra">
+            <p>
+                I have been honored with the <strong>National Scholarship</strong> twice (Ph.D. 2025, Undergraduate 2020, ranked 1st/76), the <strong>China Optics Valley Scholarship</strong>, and was recognized as an <strong>SJTU Outstanding Graduate</strong>.
+            </p>
+            <p class="contact-invite">
+                I'm always open to meeting people from diverse backgrounds. If you're interested in my research or just want to chat, feel free to reach out via <a href="mailto:huangjunjie2019@sjtu.edu.cn">Email</a> or <a href="images/wechat.jpg" target="_blank">WeChat</a>.
+            </p>
+            <div class="research-tags">
+                <span>Large Language Models</span>
+                <span>AI Agents</span>
+                <span>Information Retrieval</span>
+                <span>Recommender Systems</span>
+            </div>
         </div>
     </section>
 
