@@ -154,6 +154,7 @@
         }
         .profile-photo {
             width: 255px;
+            margin-top: 24px;
         }
         .profile-photo img {
             display: block;
@@ -272,6 +273,10 @@
         .badge-pub { background: #dbeafe; color: #1d4ed8; }
         .badge-award { background: #fef3c7; color: #b45309; }
         .badge-intern { background: #d1fae5; color: #065f46; }
+        .news-highlight {
+            color: var(--accent);
+            font-weight: 700;
+        }
         .news-badge i {
             margin-right: 3px;
             font-size: 10px;
@@ -546,6 +551,9 @@
             .profile-photo img {
                 width: 240px;
             }
+            .profile-photo {
+                margin-top: 0;
+            }
             .profile-photo img {
                 height: 320px;
             }
@@ -623,7 +631,7 @@
                 <p class="affiliation">Ph.D. Student in Computer Science · Shanghai Jiao Tong University</p>
                 <div class="profile-links" aria-label="Profile links">
                     <a href="mailto:huangjunjie2019@sjtu.edu.cn"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
-                    <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Junjie+Huang+Shanghai+Jiao+Tong+University&amp;hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+                    <a href="https://scholar.google.com/citations?hl=en&user=VDkRB50AAAAJ" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
                     <a href="images/wechat.jpg" target="_blank" rel="noopener noreferrer"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
                 </div>
                 <div class="about-text">
@@ -664,8 +672,16 @@
         <div class="news-scroll" tabindex="0" aria-label="Scrollable news archive">
         <ul class="news-list">
             <li>
+                <span class="news-date">Aug 2026</span>
+                <span class="news-content"><span class="news-badge badge-award"><i class="fas fa-medal"></i> Award</span> Our invention <strong>RetroGen</strong> was recognized as a <strong>Tencent Good Patent</strong>!</span>
+            </li>
+            <li>
+                <span class="news-date">Aug 2026</span>
+                <span class="news-content"><span class="news-badge badge-pub"><i class="fas fa-file-alt"></i> Paper</span> Our paper <em>“RetroGen: From Final Artifacts to Trajectories”</em> was accepted to <strong>Findings of EMNLP 2026</strong>!</span>
+            </li>
+            <li>
                 <span class="news-date">Jul 2026</span>
-                <span class="news-content"><span class="news-badge badge-award"><i class="fas fa-medal"></i> Award</span> Won <strong>First Prize</strong> in the <strong>AI Agent Financial Market Simulation Competition</strong>, co-organized by SJTU and BinQuant.</span>
+                <span class="news-content"><span class="news-badge badge-award"><i class="fas fa-medal"></i> Award</span> Won <strong class="news-highlight">First Prize</strong> in the AI Agent Financial Market Simulation Competition, co-organized by SJTU and BinQuant.</span>
             </li>
             <li>
                 <span class="news-date">Jan 2026</span>
@@ -678,7 +694,7 @@
             </li>
             <li>
                 <span class="news-date">Sept 2025</span>
-                <span class="news-content"><span class="news-badge badge-award"><i class="fas fa-medal"></i> Award</span> Received <strong>Ph.D. National Scholarship</strong> and SJTU Merit Student!</span>
+                <span class="news-content"><span class="news-badge badge-award"><i class="fas fa-medal"></i> Award</span> Received <strong class="news-highlight">Ph.D. National Scholarship</strong> and SJTU Merit Student!</span>
             </li>
             <li>
                 <span class="news-date">Jun 2025</span>
