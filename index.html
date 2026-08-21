@@ -104,8 +104,8 @@
         }
         .about-hero-main {
             display: grid;
-            grid-template-columns: minmax(0, 1fr) 285px;
-            gap: 48px;
+            grid-template-columns: minmax(0, 1fr) 255px;
+            gap: 42px;
             align-items: start;
         }
         .profile-info {
@@ -126,15 +126,39 @@
         .profile-info .affiliation {
             color: var(--text-light);
             font-size: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+        }
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin: 0 0 18px;
+        }
+        .profile-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 11px;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            background: var(--section-bg);
+            color: var(--text-light);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        .profile-links a:hover {
+            color: var(--primary);
+            border-color: #bfdbfe;
+            background: var(--primary-light);
+            text-decoration: none;
         }
         .profile-photo {
-            width: 285px;
+            width: 255px;
         }
         .profile-photo img {
             display: block;
-            width: 285px;
-            height: 380px;
+            width: 255px;
+            height: 340px;
             border-radius: 12px;
             object-fit: cover;
             box-shadow: 0 6px 18px rgba(0,0,0,0.12);
@@ -520,10 +544,13 @@
             }
             .profile-photo,
             .profile-photo img {
-                width: 250px;
+                width: 240px;
             }
             .profile-photo img {
-                height: 333px;
+                height: 320px;
+            }
+            .profile-links {
+                justify-content: center;
             }
             .about-hero-extra {
                 margin-top: 16px;
@@ -594,12 +621,17 @@
             <div class="profile-info">
                 <h1>Junjie Huang <span class="name-cn">(黄珺捷)</span></h1>
                 <p class="affiliation">Ph.D. Student in Computer Science · Shanghai Jiao Tong University</p>
+                <div class="profile-links" aria-label="Profile links">
+                    <a href="mailto:huangjunjie2019@sjtu.edu.cn"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+                    <a href="https://scholar.google.com/citations?view_op=search_authors&amp;mauthors=Junjie+Huang+Shanghai+Jiao+Tong+University&amp;hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Google Scholar</a>
+                    <a href="images/wechat.jpg" target="_blank" rel="noopener noreferrer"><i class="fab fa-weixin" aria-hidden="true"></i> WeChat</a>
+                </div>
                 <div class="about-text">
                     <p>
                         I am a Ph.D. student in Computer Science at Shanghai Jiao Tong University (SJTU), working in the <a href="http://apex.sjtu.edu.cn/">APEX Data &amp; Knowledge Management Lab</a> under the supervision of <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>. I received my B.Eng. in Artificial Intelligence from the <strong>Elite Talent Program</strong> at SJTU in 2023.
                     </p>
                     <p>
-                        My research focuses on <strong>Large Language Models</strong>, <strong>AI Agents</strong>, <strong>Information Retrieval</strong>, and <strong>Recommender Systems</strong>.
+                        My research focuses on Large Language Models, AI Agents, Information Retrieval, and Recommender Systems.
                     </p>
                     <p>
                         I am currently a research intern at <a href="https://open.youtu.qq.com/">Tencent Youtu Lab</a> (2025&ndash;). Previously, I interned at <a href="https://www.noahlab.com.hk/">Huawei Noah's Ark Lab</a> (2022&ndash;2023) and <a href="https://cc.cmbchina.com/">China Merchants Bank Credit Card Center</a> (2021, 2024).
