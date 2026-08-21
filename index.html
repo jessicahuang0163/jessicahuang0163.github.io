@@ -349,6 +349,40 @@
             font-size: 11px;
             font-weight: 600;
         }
+        .pub-rankings {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin: 2px 0 8px;
+        }
+        .pub-ranking {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 21px;
+            padding: 1px 7px;
+            border: 1px solid;
+            border-radius: 4px;
+            font-size: 10px;
+            line-height: 1.2;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .ranking-ccf {
+            color: #b91c1c;
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        .ranking-core {
+            color: #6d28d9;
+            background: #f5f3ff;
+            border-color: #ddd6fe;
+        }
+        .ranking-thcpl {
+            color: #047857;
+            background: #ecfdf5;
+            border-color: #a7f3d0;
+        }
         .pub-links {
             display: flex;
             gap: 8px;
@@ -736,6 +770,11 @@
                 <div class="pub-title">From Final Artifacts to Trajectories: Retrospective Process Supervision for Evidence-Grounded Long-Form Generation</div>
                 <div class="pub-authors"><span class="me">Junjie Huang</span>, Jiarui Qin, Di Yin, Weiwen Liu, Yong Yu, Xing Sun, Weinan Zhang</div>
                 <div class="pub-venue"><span class="venue-name">EMNLP 2026 Findings</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2407.21022" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -749,6 +788,11 @@
                 <div class="pub-title">Unleashing the Potential of Multi-Channel Fusion in Retrieval for Personalized Recommendations</div>
                 <div class="pub-authors"><span class="me">Junjie Huang</span>, Jiarui Qin, Jianghao Lin, Ziming Feng, Weinan Zhang, Yong Yu</div>
                 <div class="pub-venue"><span class="venue-name">The Web Conference 2025 (WWW 2025)</span> <span class="oral-tag">Oral</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2410.16080" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                     <a href="#"><i class="fas fa-trophy"></i> Student Travel Award</a>
@@ -763,6 +807,11 @@
                 <div class="pub-title">A Comprehensive Survey on Retrieval Methods in Recommender Systems</div>
                 <div class="pub-authors"><span class="me">Junjie Huang</span>, Jizheng Chen, Jianghao Lin, Jiarui Qin, Ziming Feng, Weinan Zhang, Yong Yu</div>
                 <div class="pub-venue"><span class="venue-name">ACM Transactions on Information Systems (TOIS)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2407.21022" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -776,6 +825,11 @@
                 <div class="pub-title">Beyond Graph Convolution: Multimodal Recommendation with Topology-aware MLPs</div>
                 <div class="pub-authors"><span class="me">Junjie Huang</span>, Jiarui Qin, Yong Yu, Weinan Zhang</div>
                 <div class="pub-venue"><span class="venue-name">AAAI Conference on Artificial Intelligence 2025 (AAAI 2025)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2412.11747" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -789,6 +843,11 @@
                 <div class="pub-title">Recall-Augmented Ranking: Enhancing Click-Through Rate Prediction Accuracy with Cross-Stage Data</div>
                 <div class="pub-authors"><span class="me">Junjie Huang</span>, Guohao Cai, Jieming Zhu, Zhenhua Dong, Ruiming Tang, Weinan Zhang, Yong Yu</div>
                 <div class="pub-venue"><span class="venue-name">Companion Proceedings of The Web Conference 2024 (WWW 2024)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2404.09578" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -797,6 +856,23 @@
 
         <div class="pub-subsection">Other Publications</div>
 
+        <div class="pub-item">
+            <div class="pub-thumb"><img src="images/aptbench.png" alt="aptbench"></div>
+            <div class="pub-info">
+                <div class="pub-title">APTBench: Benchmarking Agentic Potential of Base LLMs During Pre-Training</div>
+                <div class="pub-authors">Jiarui Qin*, Yunjia Xi*, <span class="me">Junjie Huang</span>, Renting Rui, Di Yin, Weiwen Liu, Yong Yu, Weinan Zhang, Xing Sun</div>
+                <div class="pub-venue"><span class="venue-name">arXiv preprint, 2025</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
+                <div class="pub-links">
+                    <a href="https://arxiv.org/abs/2510.24397" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Pub 7 -->
         <div class="pub-item">
             <div class="pub-thumb"><img src="images/reloopv2.png" alt="KDD 2023"></div>
@@ -804,6 +880,11 @@
                 <div class="pub-title">ReLoop2: Building Self-Adaptive Recommendation Models via Responsive Error Compensation Loop</div>
                 <div class="pub-authors">Jieming Zhu*, Guohao Cai*, <span class="me">Junjie Huang</span>, Zhenhua Dong, Ruiming Tang, Weinan Zhang</div>
                 <div class="pub-venue"><span class="venue-name">ACM SIGKDD 2023 (KDD 2023)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2306.08808" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -817,6 +898,11 @@
                 <div class="pub-title">Understanding or Manipulation: Rethinking Online Performance Gains of Modern Recommender Systems</div>
                 <div class="pub-authors">Zhengbang Zhu, Rongjun Qin, <span class="me">Junjie Huang</span>, Xinyi Dai, Yang Yu, Yong Yu, Weinan Zhang</div>
                 <div class="pub-venue"><span class="venue-name">ACM Transactions on Information Systems (TOIS)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2210.05662" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
@@ -830,6 +916,11 @@
                 <div class="pub-title">Learn over Past, Evolve for Future: Search-based Time-aware Recommendation with Sequential Behavior Data</div>
                 <div class="pub-authors">Jiarui Jin*, Xianyu Chen*, Weinan Zhang, <span class="me">Junjie Huang</span>, Ziming Feng, Yong Yu</div>
                 <div class="pub-venue"><span class="venue-name">The Web Conference 2022 (WWW 2022)</span></div>
+                <div class="pub-rankings" aria-label="Publication rankings">
+                    <span class="pub-ranking ranking-ccf">CCF A</span>
+                    <span class="pub-ranking ranking-core">CORE A*</span>
+                    <span class="pub-ranking ranking-thcpl">THCPL A</span>
+                </div>
                 <div class="pub-links">
                     <a href="https://arxiv.org/abs/2202.03097" target="_blank"><i class="fas fa-file-pdf"></i> Paper</a>
                 </div>
