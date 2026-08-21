@@ -98,30 +98,25 @@
             padding: 0 24px;
         }
 
-        /* Profile header */
+        /* About hero */
         .profile-header {
-            display: flex;
-            gap: 40px;
-            padding: 48px 0 40px;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 245px;
+            gap: 46px;
+            padding: 52px 0 40px;
+            align-items: start;
         }
-        .profile-photo {
-            flex-shrink: 0;
-        }
-        .profile-photo img {
-            width: 180px;
-            height: 180px;
-            border-radius: 12px;
-            object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .profile-info {
+            min-width: 0;
         }
         .profile-info h1 {
-            font-size: 28px;
+            font-size: 32px;
+            line-height: 1.25;
             font-weight: 700;
             margin-bottom: 4px;
         }
         .profile-info .name-cn {
-            font-size: 18px;
+            font-size: 19px;
             color: var(--text-light);
             font-weight: 400;
             margin-left: 8px;
@@ -129,34 +124,18 @@
         .profile-info .affiliation {
             color: var(--text-light);
             font-size: 15px;
-            margin-bottom: 12px;
+            margin-bottom: 20px;
         }
-        .profile-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 14px;
+        .profile-photo {
+            width: 245px;
         }
-        .profile-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 6px 14px;
-            background: var(--section-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            font-size: 13px;
-            color: var(--text);
-            transition: all 0.2s;
-        }
-        .profile-links a:hover {
-            background: var(--primary-light);
-            border-color: var(--primary);
-            text-decoration: none;
-            color: var(--primary);
-        }
-        .profile-links a i {
-            font-size: 14px;
+        .profile-photo img {
+            display: block;
+            width: 245px;
+            height: 326px;
+            border-radius: 12px;
+            object-fit: cover;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
 
         /* Sections */
@@ -189,7 +168,7 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-top: 12px;
+            margin-top: 14px;
         }
         .research-tags span {
             padding: 4px 12px;
@@ -204,20 +183,41 @@
             background: linear-gradient(135deg, #f0f9ff, #eff6ff);
             border-left: 3px solid var(--primary);
             border-radius: 0 8px 8px 0;
-            margin-top: 8px;
+            margin-top: 10px;
             font-style: italic;
             color: var(--text);
         }
 
         /* News */
+        .news-scroll {
+            max-height: 286px;
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            padding: 4px 18px 4px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 transparent;
+        }
+        .news-scroll::-webkit-scrollbar {
+            width: 7px;
+        }
+        .news-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 999px;
+        }
+        .news-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
         .news-list {
             list-style: none;
         }
         .news-list li {
-            padding: 8px 0;
+            padding: 10px 0;
             display: flex;
             gap: 16px;
             align-items: flex-start;
+        }
+        .news-list li + li {
+            border-top: 1px solid #f3f4f6;
         }
         .news-date {
             flex-shrink: 0;
@@ -500,13 +500,22 @@
         /* Responsive */
         @media (max-width: 768px) {
             .profile-header {
-                flex-direction: column;
+                display: flex;
+                flex-direction: column-reverse;
                 align-items: center;
-                text-align: center;
-                gap: 24px;
+                gap: 26px;
+                padding-top: 34px;
             }
-            .profile-links {
-                justify-content: center;
+            .profile-info h1,
+            .profile-info .affiliation {
+                text-align: center;
+            }
+            .profile-photo,
+            .profile-photo img {
+                width: 230px;
+            }
+            .profile-photo img {
+                height: 307px;
             }
             .pub-item {
                 flex-direction: column;
@@ -520,6 +529,30 @@
             }
             nav .nav-links a {
                 font-size: 12px;
+            }
+            .news-scroll {
+                max-height: 300px;
+                padding-right: 10px;
+            }
+            .news-list li {
+                gap: 10px;
+            }
+            .news-date {
+                min-width: 72px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            nav .nav-name {
+                display: none;
+            }
+            nav .nav-inner {
+                justify-content: center;
+                overflow-x: auto;
+            }
+            nav .nav-links {
+                gap: 12px;
+                white-space: nowrap;
             }
         }
     </style>
@@ -535,7 +568,7 @@
             <a href="#news">News</a>
             <a href="#publications">Publications</a>
             <a href="#education">Education</a>
-            <a href="#experience">Experience</a>
+            <a href="#internships">Internships</a>
             <a href="#awards">Awards</a>
             <a href="#service">Service</a>
         </div>
@@ -544,58 +577,44 @@
 
 <div class="container">
 
-    <!-- Profile Header -->
-    <div class="profile-header">
+    <!-- About Me -->
+    <section class="profile-header" id="about">
+        <div class="profile-info">
+            <h1>Junjie Huang <span class="name-cn">(黄珺捷)</span></h1>
+            <p class="affiliation">Ph.D. Student in Computer Science · Shanghai Jiao Tong University</p>
+            <div class="about-text">
+                <p>
+                    I am a Ph.D. student in Computer Science at Shanghai Jiao Tong University (SJTU), working in the <a href="http://apex.sjtu.edu.cn/">APEX Data &amp; Knowledge Management Lab</a> under the supervision of <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>. I received my B.Eng. in Artificial Intelligence from the <strong>Elite Talent Program</strong> at SJTU in 2023.
+                </p>
+                <p>
+                    My research focuses on <strong>Large Language Models</strong>, <strong>AI Agents</strong>, <strong>Information Retrieval</strong>, and <strong>Recommender Systems</strong>. I have published 7 papers in top-tier conferences/journals (including WWW, AAAI, KDD, TOIS), with 4 first-author papers.
+                </p>
+                <p>
+                    I am currently a research intern at <a href="https://open.youtu.qq.com/">Tencent Youtu Lab</a> (2025&ndash;). Previously, I interned at <a href="https://www.noahlab.com.hk/">Huawei Noah's Ark Lab</a> (2022&ndash;2023) and <a href="https://cc.cmbchina.com/">China Merchants Bank Credit Card Center</a> (2021, 2024).
+                </p>
+                <p>
+                    I have been honored with the <strong>National Scholarship</strong> twice (Ph.D. 2025, Undergraduate 2020, ranked 1st/76), the <strong>China Optics Valley Scholarship</strong>, and was recognized as an <strong>SJTU Outstanding Graduate</strong>.
+                </p>
+                <p class="contact-invite">
+                    I'm always open to meeting people from diverse backgrounds. If you're interested in my research or just want to chat, feel free to reach out via <a href="mailto:huangjunjie2019@sjtu.edu.cn">Email</a> or <a href="images/wechat.jpg" target="_blank">WeChat</a>.
+                </p>
+                <div class="research-tags">
+                    <span>Large Language Models</span>
+                    <span>AI Agents</span>
+                    <span>Information Retrieval</span>
+                    <span>Recommender Systems</span>
+                </div>
+            </div>
+        </div>
         <div class="profile-photo">
             <img src="images/profile.jpg" alt="Junjie Huang">
         </div>
-        <div class="profile-info">
-            <h1>Junjie Huang <span class="name-cn">(黄珺捷)</span></h1>
-            <p class="affiliation">
-                Ph.D. Student in Computer Science<br>
-                <a href="https://www.sjtu.edu.cn/">Shanghai Jiao Tong University (SJTU)</a><br>
-                <a href="http://apex.sjtu.edu.cn/">APEX Data & Knowledge Management Lab</a>,<br>
-                supervised by <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>
-            </p>
-            <div class="profile-links">
-                <a href="mailto:huangjunjie2019@sjtu.edu.cn"><i class="fas fa-envelope"></i> Email</a>
-                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                <a href="images/wechat.jpg" target="_blank"><i class="fab fa-weixin"></i> WeChat</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- About Me -->
-    <div class="section" id="about">
-        <h2 class="section-title"><i class="fas fa-user"></i> About Me</h2>
-        <div class="about-text">
-            <p>
-                I am a Ph.D. student in Computer Science at <a href="https://www.sjtu.edu.cn/"><strong>Shanghai Jiao Tong University (SJTU)</strong></a>, working in the <a href="http://apex.sjtu.edu.cn/"><strong>APEX Data & Knowledge Management Lab</strong></a> under the supervision of <a href="https://wnzhang.net/">Prof. Weinan Zhang</a> and <a href="https://seiee.sjtu.edu.cn/english/detail/841_695.htm">Prof. Yong Yu</a>. I received my B.Eng. in Artificial Intelligence from the <strong>Elite Talent Program</strong> at SJTU in 2023.
-            </p>
-            <p>
-                My research focuses on <strong>Large Language Models</strong>, <strong>AI Agents</strong>, <strong>Information Retrieval</strong>, and <strong>Recommender Systems</strong>. I have published 7 papers in top-tier conferences/journals (including <a href="https://thewebconf.org/">WWW</a>, <a href="https://aaai.org/conference/aaai/">AAAI</a>, <a href="https://www.kdd.org/">KDD</a>, <a href="https://dl.acm.org/journal/tois">TOIS</a>), with 4 first-author papers.
-            </p>
-            <p>
-                I am currently a research intern at <a href="https://open.youtu.qq.com/"><strong>Tencent Youtu Lab</strong></a> (2025&ndash;). Previously, I interned at <a href="https://www.noahlab.com.hk/"><strong>Huawei Noah's Ark Lab</strong></a> (2022&ndash;2023) and <a href="https://cc.cmbchina.com/"><strong>China Merchants Bank Credit Card Center</strong></a> (2021, 2024).
-            </p>
-            <p>
-                I have been honored with the <strong>National Scholarship</strong> twice (Ph.D. 2025, Undergraduate 2020, ranked 1st/76), the <strong>China Optics Valley Scholarship</strong>, and was recognized as an <strong>SJTU Outstanding Graduate</strong>.
-            </p>
-            <p class="contact-invite">
-                I'm always open to meeting people from diverse backgrounds. If you're interested in my research or just want to chat, feel free to reach out to me via <a href="mailto:huangjunjie2019@sjtu.edu.cn">Email</a> or <a href="images/wechat.jpg" target="_blank">WeChat</a>.
-            </p>
-            <div class="research-tags">
-                <span>Large Language Models</span>
-                <span>AI Agents</span>
-                <span>Information Retrieval</span>
-                <span>Recommender Systems</span>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- News -->
     <div class="section" id="news">
         <h2 class="section-title"><i class="fas fa-bolt"></i> News</h2>
+        <div class="news-scroll" tabindex="0" aria-label="Scrollable news archive">
         <ul class="news-list">
             <li>
                 <span class="news-date">Jul 2026</span>
@@ -627,6 +646,7 @@
                 <span class="news-content"><span class="news-badge badge-pub"><i class="fas fa-file-alt"></i> Paper</span> Our paper (TMLP) is accepted at <strong>AAAI 2025</strong>.</span>
             </li>
         </ul>
+        </div>
     </div>
 
     <!-- Publications -->
@@ -771,8 +791,8 @@
     </div>
 
     <!-- Internship Experience -->
-    <div class="section" id="experience">
-        <h2 class="section-title"><i class="fas fa-briefcase"></i> Experience</h2>
+    <div class="section" id="internships">
+        <h2 class="section-title"><i class="fas fa-briefcase"></i> Internships</h2>
 
         <div class="intern-item">
             <div class="intern-icon intern-icon-lg"><img src="images/tencent_logo_icon_169619.png" alt="Tencent"></div>
@@ -793,7 +813,7 @@
                 <div class="intern-role">Algorithm Research Intern</div>
                 <div class="intern-date">Jul 2021 &ndash; Sept 2021; Feb 2024 &ndash; Sept 2024</div>
                 <div class="intern-detail">
-                    Research on retrieval methods and multi-channel fusion in recommender systems. Published survey in <a href="https://dl.acm.org/journal/tois"><strong>TOIS</strong></a> and paper at <a href="https://thewebconf.org/"><strong>WWW 2025</strong></a> (Student Travel Award). Deployed model in production with millions of DAUs, increasing CTR by <strong>17%</strong>.
+                    Research on retrieval methods and multi-channel fusion in recommender systems. Published survey in <a href="https://dl.acm.org/journal/tois">TOIS</a> and paper at <a href="https://thewebconf.org/">WWW 2025</a> (Student Travel Award). Deployed model in production with millions of DAUs, increasing CTR by <strong>17%</strong>.
                 </div>
             </div>
         </div>
@@ -805,7 +825,7 @@
                 <div class="intern-role">Algorithm Research Intern</div>
                 <div class="intern-date">Jul 2022 &ndash; Feb 2023</div>
                 <div class="intern-detail">
-                    Research on ranking methods and user behavior retrieval for recommender systems. Published at <a href="https://www.kdd.org/"><strong>KDD 2023</strong></a> and <a href="https://thewebconf.org/"><strong>WWW 2024</strong></a>.
+                    Research on ranking methods and user behavior retrieval for recommender systems. Published at <a href="https://www.kdd.org/">KDD 2023</a> and <a href="https://thewebconf.org/">WWW 2024</a>.
                 </div>
             </div>
         </div>
